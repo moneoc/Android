@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>ventasApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div data-role="page" id="home">
+        <div data-role="header"><h1>ventasApp</h1></div>
+        <div role="main" class="ui-content">
+        	<ul data-role="listview" data-inset="true">
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#reservacion">Reservacion</a></li>
+                <li><a href="#politicas">Politicas</a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <span style="font-size:8pt;">Todos los derechos reservados &copy;</span>
+            <a href="#aqui" data-transition="slideup">Aqui</a>
+        </div>
+    </div>
+    
+    <div data-role="page" id="aqui">
+        <div data-role="header"><a href="#" data-rel="back">Atrás</a><h1>Aqui</h1></div>
+        <div role="main" class="ui-content">
+        	<p>
+                Cuando ya se tiene algo de experiencia dentro del diseño web las cosas comienzan a parecer tediosas, el repetir una y otra vez lo mismo para llegar a una simple estructura html puede ser aburrido y desesperante en ocasiones, es por eso que como buenos profesionales y amantes del buen front-end debemos reducir el tiempo que tardamos durante el desarrollo de un proyecto, esto incluye reducir el tiempo que usamos a la hora de escribir código.
+            </p>
+        </div>
+    </div>
+    
+    <div data-role="page" id="historia">
+        <div data-role="header"><a href="#" data-rel="back">Atrás</a><h1>Aqui</h1></div>
+        <div role="main" class="ui-content">
+        	<p>
+            </p>
+        </div>
+    </div>
+    
+    <div data-role="page" id="reservacion">
+        <div data-role="header"><h1>Reservacion</h1></div>
+        <div role="main" class="ui-content">
+        	<ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">Datos de reserva</li>
+                <li>
+                    <select id="numPer">
+                        <option value="">Personas</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </li>
+                <li>
+                    <select id="numDias">
+                        <option value="">Dias</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="ui-btn-active">Aceptar</a></li>
+                    <li><a href="#home">Cancelar</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+    </div>
+    
+    <div data-role="page" id="reserva">
+        <div data-role="header"><h1>Reservacion</h1></div>
+        <div role="main" class="ui-content">
+        	<ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">Tipo de habitación</li>
+                <li>
+                    <a href="#">Suite</a>
+                </li>
+                <li>
+                    <a href="#">Doble</a>
+                </li>
+                <li>
+                    <a href="#">Sencilla</a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="ui-btn-active">Recervar</a></li>
+                    <li><a href="#home">Cancelar</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+    </div>
+    
+    <div data-role="page" id="registro">
+        <div data-role="header"><h1>Registro</h1></div>
+        <div role="main" class="ui-content">
+        	<ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">Datos personales</li>
+                <li>
+                    <input type="text" placeholder="Nombre completo" id="regNombre">
+                </li>
+                <li>
+                    <input type="email" placeholder="Email" id="regEmail">
+                </li>
+                <li>
+                   <input type="tel" placeholder="Telefono" id="regTel">
+                </li>
+                <li>
+                    <a href="#" id="tomarFoto">Tomar Foro</a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="ui-btn-active">Regitrar</a></li>                    
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+    </div>
+    
+    <div data-role="page" id="politicas">
+        <div data-role="header"><a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all"></a><h1>Politicas</h1></div>
+        <div role="main" class="ui-content">
+        	<p>
+                Y prácticamente es la base de todo lo que se puede hacer, puedes hacer muchas estructuras desde lo mas básico hasta lo mas avanzado, puedes desde agregar un link hasta agregar un div con varios elementos dentro, todo con un simple atajo de 1 sola linea.
+            </p>
+        </div>
+    </div>
+	
+    <script src="js/jquery-1.12.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>
