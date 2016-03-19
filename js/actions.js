@@ -15,7 +15,8 @@ var fnReg ={
         var foto = $('#regFoto').data('foto');
         
         if (nom !='' && mail !='' && tel !='')
-            alert(nom + ' ' + mail + ' ' + tel);
+            //alert(nom + ' ' + mail + ' ' + tel);
+            window.location.href('#home');
         else
             alert('Todos los datos son requeridos');
     }
