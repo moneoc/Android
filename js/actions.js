@@ -20,5 +20,9 @@ var fnReg ={
             alert('Todos los datos son requeridos');
     }
 };
+<<<<<<< HEAD
 ///
+=======
+
+>>>>>>> origin/master
 $(fnReg.init);
