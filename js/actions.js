@@ -2,7 +2,7 @@ var fnReg ={
     init: function(){
         if(!fnReg.estaRegistrado())
             window.location.href="#registro";
-        $('#registro div[data-role=footer] a').click(fnReg.registrar);
+        $('#validaRegistro').click(fnReg.registrar);
     },
     //funcion de registro
     estaRegistrado: function(){
