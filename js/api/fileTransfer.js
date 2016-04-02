@@ -14,17 +14,13 @@ var ft ={
     fail: function(error) {
     // error.code == FileTransferError.ABORT_ERR
     alert("An error has occurred: Code = " + error.code);
-    console.log("upload error source " + error.source);
-    console.log("upload error target " + error.target);
     },
-    transfer: function(){
+    transfer: function(fileURL){
         var options = new FileUploadOptions();
         options.fileKey="foto"; //nombre del lado donde se recive en este caso del arhivo fileURL
         options.fileName="fotoCapturada";
         options.mimeType="image/jpeg";
         
-        
         ft.obj.upload(fileURL, encodeURI("http://carlos.igitsoft.com/apps/test.php"), ft.win, ft.fail, options);
-        
     }
 };

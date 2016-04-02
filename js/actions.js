@@ -1,9 +1,10 @@
-var fnReg ={
+var fnReg = {
     ready: function(){
       document.addEventListener("deviceready",fnReg.init,false);  
     },
 
     init: function(){
+        alert('si entro!!!!');
         if(!fnReg.estaRegistrado())
             window.location.href='#registro';
         
