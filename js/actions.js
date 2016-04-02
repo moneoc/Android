@@ -2,6 +2,7 @@ var fnReg ={
     ready:function(){
       document.addEventListener("deviceready",fnReg.init,false);  
     },
+
     init: function(){
         if(!fnReg.estaRegistrado())
             window.location.href="#registro";
@@ -9,14 +10,15 @@ var fnReg ={
         $('#validaRegistro').click(fnReg.registrar);
         $('#tomarFoto').click(capture.takePhoto);
     },
-    //funcion de registro
+    
     estaRegistrado: function(){
-        var usr = window.localStorage.getItem("user");
-        if(usr == undefined || usr ='')
+        var usuario = window.localStorage.getItem("usuario");
+        if(usuario == undefined || usuario =='')
             return false;
         else
             return true;
     },
+
     registrar: function(){
         var nom = $('#regNom').val();
         var mail = $('#regMail').val();

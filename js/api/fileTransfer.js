@@ -7,7 +7,7 @@ var ft ={
     obj: new FileTransfer(),
     win: function(r){
         if (r.response ==1){
-            window.localStorage.setItem("user",fnReg.init,false);
+            window.localStorage.setItem("usuario",$('#regNom').val());
             window.location.href('#home');
         }
     },
