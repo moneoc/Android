@@ -26,6 +26,7 @@ var ft ={
         options.fileName="fotoCapturada";
         options.mimeType="image/jpeg";
         
+        
         ft.upload(fileURL, encodeURI("http://carlos.igitsoft.com/apps/test.php"), win, fail, options);
         ft.abort();
     }
