@@ -1,11 +1,11 @@
 var fnReg ={
-    ready:function(){
+    ready: function(){
       document.addEventListener("deviceready",fnReg.init,false);  
     },
 
     init: function(){
         if(!fnReg.estaRegistrado())
-            window.location.href="#registro";
+            window.location.href='#registro';
         
         $('#validaRegistro').click(fnReg.registrar);
         $('#tomarFoto').click(capture.takePhoto);
@@ -34,7 +34,7 @@ var fnReg ={
               data: { nom: nom, mail: mail, tel:tel }
             }).done(function( msg ) {
                 if(msg ==1 ){
-                    ft.transfer(foto)
+                    ft.transfer(foto);
                 }
               });
         else
