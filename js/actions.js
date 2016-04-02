@@ -38,6 +38,6 @@ var fnReg ={
         else
             alert('Todos los datos son requeridos');
     }
-}
+};
 
 $(fnReg.ready);
