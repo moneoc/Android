@@ -50,4 +50,4 @@ var eje ={
 };
 */
 
-$(fnReg.ready);
+$(fnReg.init);

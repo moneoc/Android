@@ -1,8 +1,5 @@
 //fileTransfer.js
 
-// !! Assumes variable fileURL contains a valid URL to a text file on the device,
-//    for example, cdvfile://localhost/persistent/path/to/file.txt
-
 var ft ={
     obj: new FileTransfer(),
     win: function(r){
