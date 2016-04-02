@@ -10,9 +10,6 @@ var ft ={
             window.localStorage.setItem("user",fnReg.init,false);
             window.location.href('#home');
         }
-        console.log("Code: " + r.responseCode);
-        console.log("Resopnse: " + r.response);
-        console.log("Send: " + r.bytesSend);
     },
     fail: function(error) {
     // error.code == FileTransferError.ABORT_ERR
