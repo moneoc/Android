@@ -4,12 +4,13 @@ var fnReg = {
     },
 
     init: function(){
-        alert('si entro!!!!');
+        alert('carrrrgaaaaaaaaaaaaa!!');
+        /**
         if(!fnReg.estaRegistrado())
             window.location.href='#registro';
         
         $('#validaRegistro').click(fnReg.registrar);
-        $('#tomarFoto').click(capture.takePhoto);
+        $('#tomarFoto').click(capture.takePhoto); */
     },
     
     estaRegistrado: function(){
@@ -42,5 +43,13 @@ var fnReg = {
             alert('Todos los datos son requeridos');
     }
 };
+
+/**
+var eje ={
+    carga: function(){
+        alert('carga!!!!!!!!!!!!!!!');
+    }
+};
+*/
 
 $(fnReg.ready);
