@@ -5,6 +5,7 @@ var fnReg ={
     init: function(){
         if(!fnReg.estaRegistrado())
             window.location.href="#registro";
+        
         $('#validaRegistro').click(fnReg.registrar);
         $('#tomarFoto').click(capture.takePhoto);
     },
@@ -37,5 +38,6 @@ var fnReg ={
         else
             alert('Todos los datos son requeridos');
     }
-};
+}
+
 $(fnReg.ready);
