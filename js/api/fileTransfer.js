@@ -24,7 +24,7 @@ var ft ={
         options.mimeType="image/jpeg";
         
         
-        ft.upload(fileURL, encodeURI("http://carlos.igitsoft.com/apps/test.php"), win, fail, options);
-        ft.abort();
+        ft.obj.upload(fileURL, encodeURI("http://carlos.igitsoft.com/apps/test.php"), ft.win, ft.fail, options);
+        
     }
 };
