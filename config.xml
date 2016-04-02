@@ -19,7 +19,6 @@
     
     <preference name="phonegap-version" value="cli-5.2.0" />
     <preference name="orientation" value="portrait" />
-  
     
     <plugin name="cordova-plugin-media-capture" />
     <plugin name="cordova-plugin-file-transfer" />

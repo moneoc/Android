@@ -3,14 +3,12 @@ var fnReg = {
       document.addEventListener("deviceready",fnReg.init,false);  
     },
 
-    init: function(){
-        alert('carrrrgaaaaaaaaaaaaa!!');
-        /**
+    init: function(){      
         if(!fnReg.estaRegistrado())
             window.location.href='#registro';
         
-        $('#validaRegistro').click(fnReg.registrar);
-        $('#tomarFoto').click(capture.takePhoto); */
+        /*$('#validaRegistro').click(fnReg.registrar);
+       /* $('#tomarFoto').click(capture.takePhoto); */
     },
     
     estaRegistrado: function(){
