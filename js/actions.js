@@ -1,6 +1,5 @@
 var fnReg = {
     ready: function(){
-        alert('phonegap ...!!!!!!!!');
       document.addEventListener("deviceready",fnReg.init,false);  
     },
 
@@ -8,8 +7,8 @@ var fnReg = {
         if(!fnReg.estaRegistrado())
             window.location.href='#registro';
         
-        /*$('#validaRegistro').click(fnReg.registrar);
-       /* $('#tomarFoto').click(capture.takePhoto); */
+        $('#validaRegistro').click(fnReg.registrar);
+        $('#tomarFoto').click(capture.takePhoto);
     },
     
     estaRegistrado: function(){
