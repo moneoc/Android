@@ -1,5 +1,6 @@
 var fnReg = {
     ready: function(){
+        alert('phonegap ...!!!!!!!!');
       document.addEventListener("deviceready",fnReg.init,false);  
     },
 
@@ -50,4 +51,4 @@ var eje ={
 };
 */
 
-$(fnReg.init);
+$(fnReg.ready);
