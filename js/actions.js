@@ -26,15 +26,15 @@ var fnReg = {
         var foto = $('#regFoto').data('foto');
         
         if (nom !='' && mail !='' && tel !='' && foto != undefined)
-            //alert(nom + ' ' + mail + ' ' + tel);
+            alert(nom + ' ' + mail + ' ' + tel);
             //window.location.href='#home';
             $.ajax({
               method: "POST",
               url: "http://carlos.igitsoft.com/apps/test.php",
               data: { nom: nom, mail: mail, tel:tel }
             }).done(function( msg ) {
+                alert('si entrao a' + URL);
                 if(msg ==1 ){
-                    alert('si entrao a' + URL);
                     ft.transfer(foto);
                 }
               });
