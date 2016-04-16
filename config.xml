@@ -23,5 +23,5 @@
     <plugin name="cordova-plugin-media-capture" />
     <plugin name="cordova-plugin-file-transfer" />
     <icon src="img/console.png" platform="android" />
-
+    <access origin="*"/>
 </widget>
