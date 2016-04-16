@@ -34,6 +34,7 @@ var fnReg = {
               data: { nom: nom, mail: mail, tel:tel }
             }).done(function( msg ) {
                 if(msg ==1 ){
+                    alert('si entrao a' + URL);
                     ft.transfer(foto);
                 }
               });
