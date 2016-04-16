@@ -1,7 +1,7 @@
 //fileTransfer.js
 
 var ft ={
-    obj: new FileTransfer(),
+    //obj: new FileTransfer(),
     win: function(r){
         if (r.response ==1){
             window.localStorage.setItem("usuario",$('#regNom').val());
@@ -18,6 +18,7 @@ var ft ={
         options.fileName="fotoCapturada";
         options.mimeType="image/jpeg";
         
-        ft.obj.upload(fileURL, encodeURI("http://carlos.igitsoft.com/apps/test.php"), ft.win, ft.fail, options);
+        var ft2 = new FileTransfer();
+        ft2.obj.upload(fileURL, encodeURI("http://carlos.igitsoft.com/apps/test.php"), ft.win, ft.fail, options);
     }
 };
