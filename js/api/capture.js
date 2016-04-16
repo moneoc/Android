@@ -15,6 +15,6 @@ var capture={
     },
     //start image capture
     takePhoto: function(){
-        navigator.device.capture.captureImage(capture.success, capture.captureError, {limit:2});
+        navigator.device.capture.captureImage(capture.success, capture.captureError, {limit:1});
     }
 };

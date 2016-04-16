@@ -5,6 +5,8 @@ var ft ={
     win: function(r){
         if (r.response == 1){
             window.localStorage.setItem("usuario",$('#regNom').val());
+            $.mobile.loading("hide");
+            navigator.vibrate(3000);
             window.location.href= '#home';
         }
     },
@@ -13,7 +15,7 @@ var ft ={
     alert("An error has occurred: Code = " + error.code);
     },
     transfer: function(fileURL){
-        alert(fileURL);
+        //alert(fileURL);
         var options = new FileUploadOptions();
         options.fileKey="foto"; //nombre del lado donde se recive en este caso del arhivo fileURL
         options.fileName="fotoCapturada";

@@ -3,12 +3,20 @@ var fnReg = {
       document.addEventListener("deviceready",fnReg.init,false);  
     },
 
-    init: function(){      
+    init: function(){  
+        //Funcionalidades para el registro
         if(!fnReg.estaRegistrado())
             window.location.href='#registro';
         
-        $('#validaRegistro').click(fnReg.registrar);
-        $('#tomarFoto').click(capture.takePhoto);
+        //$('#validaRegistro').click(fnReg.registrar);
+        //$('#tomarFoto').click(capture.takePhoto);
+        $('#validaRegistro').tap(fnReg.registrar);
+        $('#tomarFoto').tap(capture.takePhoto);
+        
+        //Funcionalidades para reservar
+        $('#reservacion1 div[data-role=navbar] a:eq(0)').tap(fnReg.siguientePaso);
+        $('#reservacion2 ul[data-role=listview] a').tap(fnReg.seleccionaHabitacion);
+        $('#reservacion2 div[data-role=navbar] a:eq(0)').tap(fnReg.obtenerReservacion);
     },
     
     estaRegistrado: function(){
@@ -44,6 +52,36 @@ var fnReg = {
               });
         }else
             alert('Todos los datos son requeridos');
+    },
+    per: '',
+    dia: '',
+    th: '',
+    siguientePaso: function(){
+        fnReg.per= $('#numPer').val();
+        fnReg.dia=$('#numDias').val();
+        if (fnReg.per != '' && fnReg.dia != '')
+            window.location.href='#reservacion2';
+        else
+            //alert('todos!!');
+            navigator.notification.alert("Todos los campos son requeridos",null,"Error al llenar","Aceptar");
+    },
+    seleccionaHabitacion: function(){
+        $(this).parent().parent().find('a').css('background-color','transparent');
+        $(this).css('background-color','green');
+        fnReg.th = $(this).parent().index();
+        alert(fnReg.th);
+    },
+    obtenerReservacion: function(){
+        if (fnReg.th != ''){
+            if(navigator.connection.type != Connection.NONE)
+                //enviar al servidor
+            else
+                //almacenar localmente
+                
+                    
+        }else
+            //alert('Debe seleccionar tipo de habitacion');
+            navigator.notification.alert("Debe seleccionar tipo de habitacion",null,"Error al llenar","Aceptar");
     }
 };
 
