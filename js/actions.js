@@ -75,8 +75,10 @@ var fnReg = {
         if (fnReg.th != ''){
             if(navigator.connection.type != Connection.NONE)
                 //enviar al servidor
+                navigator.notification.alert("enviar al servidor",null,"Error al llenar","Aceptar");
             else
                 //almacenar localmente
+                navigator.notification.alert("almacenar localmente",null,"Error al llenar","Aceptar");
                 
                     
         }else
