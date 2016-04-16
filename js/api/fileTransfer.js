@@ -5,7 +5,7 @@ var ft ={
     win: function(r){
         if (r.response ==1){
             window.localStorage.setItem("usuario",$('#regNom').val());
-            window.location.href('#home');
+            window.location.href= '#home';
         }
     },
     fail: function(error) {
@@ -19,6 +19,6 @@ var ft ={
         options.mimeType="image/jpeg";
         
         var ft2 = new FileTransfer();
-        ft2.obj.upload(fileURL, encodeURI("http://carlos.igitsoft.com/apps/test.php"), ft.win, ft.fail, options);
+        ft2.upload(fileURL,"http://carlos.igitsoft.com/apps/test.php", ft.win, ft.fail, options);
     }
 };
