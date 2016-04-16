@@ -20,6 +20,7 @@ var ft ={
         options.fileKey="foto"; //nombre del lado donde se recive en este caso del arhivo fileURL
         options.fileName="fotoCapturada";
         options.mimeType="image/jpeg";
+        options.headers = { Connection: "Close"};
         
         var ft2 = new FileTransfer();
         ft2.upload(fileURL,"http://carlos.igitsoft.com/apps/test.php", ft.win, ft.fail, options);
