@@ -38,7 +38,6 @@ var fnReg = {
                   alert(jq+txt);
               }
             }).done(function( msg ) {
-                alert('si ');
                 if(msg == 1 ){
                     ft.transfer(foto);
                 }
