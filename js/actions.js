@@ -28,10 +28,15 @@ var fnReg = {
         if (nom !='' && mail !='' && tel !='' && foto != undefined)
             //alert(nom + ' ' + mail + ' ' + tel);
             //window.location.href='#home';
+            $.mobile.loading("show",{theme: 'b'});
             $.ajax({
               method: "POST",
               url: "http://carlos.igitsoft.com/apps/test.php",
-              data: { nom: nom, mail: mail, tel:tel }
+              data: { nom: nom, mail: mail, tel:tel },
+              error: function(jq,txt){
+                  $.mobile.loading("hide");
+                  alert(jq+txt);
+              }
             }).done(function( msg ) {
                 //alert('si entrao a' + URL);
                 if(msg ==1 ){
