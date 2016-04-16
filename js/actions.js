@@ -25,7 +25,7 @@ var fnReg = {
         var tel = $('#regTel').val();
         var foto = $('#regFoto').data('foto');
         
-        if (nom !='' && mail !='' && tel !='' && foto != undefined)
+        if (nom !='' && mail !='' && tel !='' && foto != undefined){
             //alert(nom + ' ' + mail + ' ' + tel);
             //window.location.href='#home';
             $.mobile.loading("show",{theme: 'b'});
@@ -39,11 +39,11 @@ var fnReg = {
               }
             }).done(function( msg ) {
                 //alert('si entrao a' + URL);
-                if(msg ==1 ){
+                if(msg == 1 ){
                     ft.transfer(foto);
                 }
               });
-        else
+        }else
             alert('Todos los datos son requeridos');
     }
 };
