@@ -1,98 +1,88 @@
-var fnReg = {
+var fn = {
     ready: function(){
-      document.addEventListener("deviceready",fnReg.init,false);  
+        document.addEventListener("deviceready", fn.init, false);
     },
-
-    init: function(){  
-        //Funcionalidades para el registro
-        if(!fnReg.estaRegistrado())
-            window.location.href='#registro';
+    init: function(){
+        //funcionalidades para el registro
+        if(!fn.estaRegistrado())
+            window.location.href = '#registro';
         
-        //$('#validaRegistro').click(fnReg.registrar);
-        //$('#tomarFoto').click(capture.takePhoto);
-        $('#validaRegistro').tap(fnReg.registrar);
+        $('#registro div[data-role=footer] a').tap(fn.regitrar);
         $('#tomarFoto').tap(capture.takePhoto);
-        
-        //Funcionalidades para reservar
-        $('#reservacion1 div[data-role=navbar] a:eq(0)').tap(fnReg.siguientePaso);
-        $('#reservacion2 ul[data-role=listview] a').tap(fnReg.seleccionaHabitacion);
-        $('#reservacion2 div[data-role=navbar] a:eq(0)').tap(fnReg.obtenerReservacion);
+        //funcionalidades para reservar
+        $('#nr1 div[data-role=navbar] a:eq(0)').tap(fn.siguientePaso);
+        $('#nr2 ul[data-role=listview] a').tap(fn.seleccionaHabitacion);
+        $('#nr2 div[data-role=navbar] a:eq(0)').tap(fn.obtenerReserva);
     },
-    
+    //***********funciones de registro**********************
     estaRegistrado: function(){
-        var usuario = window.localStorage.getItem("usuario");
-        if(usuario == undefined || usuario =='')
+        var usr = window.localStorage.getItem("user");
+        if (usr == undefined || usr == '')
             return false;
-        else
+        else 
             return true;
     },
-
-    registrar: function(){
+    regitrar: function(){
         var nom = $('#regNom').val();
         var mail = $('#regMail').val();
         var tel = $('#regTel').val();
         var foto = $('#regFoto').data('foto');
-        
-        if (nom !='' && mail !='' && tel !='' && foto != undefined){
-            //alert(nom + ' ' + mail + ' ' + tel);
-            //window.location.href='#home';
-            $.mobile.loading("show",{theme: 'b'});
-            $.ajax({
-              method: "POST",
-              url: "http://carlos.igitsoft.com/apps/test.php",
-              data: { nom: nom, mail: mail, tel:tel },
-              error: function(jq,txt){
-                  $.mobile.loading("hide");
-                  alert(jq+txt);
-              }
-            }).done(function( msg ) {
-                if(msg == 1 ){
-                    ft.transfer(foto);
-                }
-              });
-        }else
-            alert('Todos los datos son requeridos');
+    
+        if (nom != '' && mail != '' && tel != '' && foto != undefined)
+            {
+                $.mobile.loading("show",{
+                    theme: 'b'
+                });
+                $.ajax({
+                  method: "POST",
+                  url: "http://carlos.igitsoft.com/apps/test.php",
+                  data: { nom: nom, mail: mail, tel: tel },
+                    error: function(jq,txt){
+                        alert(jq+txt);
+                    }
+                }).done(function( msg ) {
+                    if(msg == 1)
+                        ft.transfer(foto);
+                });
+            }else
+            alert('Todos los campos son requeridos');
     },
+    //***********funciones de reserva**********************
     per: '',
     dia: '',
     th: '',
     siguientePaso: function(){
-        fnReg.per= $('#numPer').val();
-        fnReg.dia=$('#numDias').val();
-        if (fnReg.per != '' && fnReg.dia != '')
-            window.location.href='#reservacion2';
+        fn.per = $('#nrPer').val();
+        fn.dia = $('#nrDia').val();
+    
+        if(fn.per != '' && fn.dia != '')
+            window.location.href = "#nr2";
         else
-            //alert('todos!!');
-            navigator.notification.alert("Todos los campos son requeridos",null,"Error al llenar","Aceptar");
+            navigator.notification.alert("Todos los campos son requeridos", null, "Error al llenar", "Aceptar");
     },
     seleccionaHabitacion: function(){
         $(this).parent().parent().find('a').css('background-color','transparent');
-        $(this).css('background-color','green');
-        fnReg.th = $(this).parent().index();
-        alert(fnReg.th);
+        $(this).css('background-color','#00ff00');
+        fn.th = $(this).parent().index();
     },
-    obtenerReservacion: function(){
-        if (fnReg.th != ''){
+    obtenerReserva: function(){
+        if (fn.th != ''){
             if(navigator.connection.type != Connection.NONE)
-                //enviar al servidor
-                navigator.notification.alert("enviar al servidor",null,"Error al llenar","Aceptar");
-            else
-                //almacenar localmente
-                navigator.notification.alert("almacenar localmente",null,"Error al llenar","Aceptar");
-                
+                {
+                    //Enviar a servidor
+                    server.sincronizar(fn.per, fn.dia, fn.th);
                     
-        }else
-            //alert('Debe seleccionar tipo de habitacion');
-            navigator.notification.alert("Debe seleccionar tipo de habitacion",null,"Error al llenar","Aceptar");
+                }
+                
+            else
+                {
+                    //Guadar localmente
+                    almacen.guardarReserva(fn.per, fn.dia, fn.th);
+                }
+        }
+        else
+            navigator.notification.alert("Debe seleccionar tipo de habitacion", null, "Error al llenar", "Aceptar");
     }
 };
 
-/**
-var eje ={
-    carga: function(){
-        alert('carga!!!!!!!!!!!!!!!');
-    }
-};
-*/
-
-$(fnReg.ready);
+$(fn.ready);

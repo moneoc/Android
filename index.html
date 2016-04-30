@@ -1,149 +1,137 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>ventasApp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <div data-role="page" id="home">
-        <div data-role="header"><h1>ventasApp</h1></div>
-        <div role="main" class="ui-content">
-        	<ul data-role="listview" data-inset="true">
-                <li><a href="#historia">Historia</a></li>
-                <li><a href="#reservacion1">Reservacion</a></li>
-                <li><a href="#politicas">Politicas</a></li>
-            </ul>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HotelApp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div data-role="page" id="home">
+	       <div data-role="header"><h1>Hotel App</h1></div>
+	       <div role="main" class="ui-content">
+                <ul  data-role="listview" data-inset="true">
+                    <li><a href="#nr1">Reservas</a></li>
+                    <li><a href="#historial">Historial</a></li>
+                    <li><a href="#politicas">Políticas</a></li>
+               </ul>
+            </div>
+	       <div data-role="footer" data-position="fixed" >
+               <span style="font-size=8pt;">Todos los derechos reservados &copy;</span>
+               <a href="#nosotros" data-transition="slideup">Nosotros</a>
+            </div>
         </div>
-        <div data-role="footer" data-position="fixed">
-            <span style="font-size:8pt;">Todos los derechos reservados &copy;</span>
-            <a href="#aqui" data-transition="slideup">Aqui</a>
+        
+         <div data-role="page" id="nosotros">
+	       <div data-role="header"><a href="#" data-rel="back">Atras</a><h1>Nosotros</h1></div>
+	       <div role="main" class="ui-content">
+                <p>To make a list filterable, simply add the data-filter="true" attribute to the list. The framework will then append a search box above the list and add the behavior to filter out list items that don't contain the current search string as the user types. The input's placeholder text defaults to "Filter items...". To configure the placeholder text in the search input, use the data-filter-placeholder attribute. By default the search box will inherit its theme from its parent. The search box theme can be configured using the data attribute data-filter-theme on your listview.
+               </p>
+            </div>
         </div>
-    </div>
-    
-    <div data-role="page" id="aqui">
-        <div data-role="header"><a href="#" data-rel="back">Atrás</a><h1>Aqui</h1></div>
-        <div role="main" class="ui-content">
-        	<p>
-                Cuando ya se tiene algo de experiencia dentro del diseño web las cosas comienzan a parecer tediosas, el repetir una y otra vez lo mismo para llegar a una simple estructura html puede ser aburrido y desesperante en ocasiones, es por eso que como buenos profesionales y amantes del buen front-end debemos reducir el tiempo que tardamos durante el desarrollo de un proyecto, esto incluye reducir el tiempo que usamos a la hora de escribir código.
-            </p>
+        
+        <div data-role="page" id="politicas">
+	       <div data-role="header"><a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Atras</a><h1>Políticas</h1></div>
+	       <div role="main" class="ui-content">
+                <p>Important: Some platforms currently have issues with transitions. We are working on a solution to solve the problem for everyone. If you are experiencing flickers and flashes during or at the end of a transition we suggest the following workaround. Please note that this workaround should be thoroughly tested on the target platform before deployment. This workaround is known to cause performance issues and browser crashes on some platforms, especially Android. Add the following code to your custom css.
+               </p>
+            </div>
         </div>
-    </div>
-    
-    <div data-role="page" id="historia">
-        <div data-role="header"><a href="#" data-rel="back">Atrás</a><h1>Aqui</h1></div>
-        <div role="main" class="ui-content">
-        	<p>
-            </p>
+        
+        <div data-role="page" id="historial">
+	       <div data-role="header"><a href="#" data-rel="back" class="ui-content">Atras</a><h1>Historial</h1></div>
+	       <div role="main" class="ui-content">
+                
+            </div>
         </div>
-    </div>
-    
-    <div data-role="page" id="reservacion1">
-        <div data-role="header"><h1>Reservacion</h1></div>
-        <div role="main" class="ui-content">
-        	<ul data-role="listview" data-inset="true">
-                <li data-role="list-divider">Datos de reserva</li>
-                <li>
-                    <select id="numPer">
-                        <option value="">Personas</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </li>
-                <li>
-                    <select id="numDias">
-                        <option value="">Dias</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </li>
-            </ul>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#" class="ui-btn-active">Siguiente</a></li>
-                    <li><a href="#home">Cancelar</a></li>
+        
+        <div data-role="page" id="nr1">
+	       <div data-role="header"><h1>Reservar</h1></div>
+	       <div role="main" class="ui-content">
+               <ul data-role="listview">
+                   <li date-roles="list-divider">Datos de Reserva
+                   </li>
+                    <li>
+                        <select id="nrPer">
+                            <option value="">Personas</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>    
+                            <option value="5">5</option>
+                        </select>
+                   </li>
+                    <li>
+                        <select id="nrDia">
+                            <option value="">Dias</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>    
+                            <option value="5">5</option>
+                        </select>
+                   </li>
                 </ul>
+            </div>
+            <div  data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#">Siguiente</a></li>
+                        <li><a href="#home">Cancelar</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div>
+        </div>
+        
+        <div data-role="page" id="nr2">
+	       <div data-role="header"><h1>Reservar</h1></div>
+	       <div role="main" class="ui-content">
+               <ul data-role="listview">
+                   <li date-roles="list-divider">Tipo de habitación
+                   </li>
+                    <li><a href="#">Suite</a></li>
+                    <li><a href="#">Doble</a></li>
+                    <li><a href="#">Sencillo</a></li>
+                </ul>
+            </div>
+            <div  data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#" class="ui-btn-active">Reservar</a></li>
+                        <li><a href="#home">Cancelar</a></li>
+                    </ul>
             </div><!-- /navbar -->
         </div>
-    </div>
-    
-    <div data-role="page" id="reservacion2">
-        <div data-role="header"><h1>Reservacion</h1></div>
-        <div role="main" class="ui-content">
-        	<ul data-role="listview" data-inset="true">
-                <li data-role="list-divider">Tipo de habitación</li>
-                <li>
-                    <a href="#">Suite</a>
-                </li>
-                <li>
-                    <a href="#">Doble</a>
-                </li>
-                <li>
-                    <a href="#">Sencilla</a>
-                </li>
-            </ul>
         </div>
-        <div data-role="footer" data-position="fixed">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#" class="ui-btn-active">Reservar</a></li>
-                    <li><a href="#home">Cancelar</a></li>
+        <div data-role="page" id="registro">
+	       <div data-role="header"><h1>Registro</h1></div>
+	       <div role="main" class="ui-content">
+               <ul data-role="listview">
+                   <li date-roles="list-divider">Datos Personales
+                   </li>
+                    <li><input type="text" id="regNom" placeholder="Nombre Completo"></li>
+                    <li><input type="email" id= "regMail" placeholder="Corre Electronico" ></li>
+                   <li><input type="tel" id= "regTel" placeholder="Telefono" ></li>
+                    <li id="regFoto"><a href="#" id="tomarFoto">Tomar foto</a></li>
                 </ul>
+            </div>
+            <div  data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#" class="ui-btn-active">Registrar</a></li>
+                    </ul>
             </div><!-- /navbar -->
         </div>
-    </div>
-    
-    <div data-role="page" id="registro">
-        <div role="main" class="ui-content">
-        	<ul data-role="listview" data-inset="true">
-                <li data-role="list-divider">Datos personales</li>
-                <li>
-                    <input type="text" placeholder="Nombre completo" id="regNom">
-                </li>
-                <li>
-                    <input type="email" placeholder="Email" id="regMail">
-                </li>
-                <li>
-                   <input type="tel" placeholder="Telefono" id="regTel">
-                </li>
-                <li id="regFoto">
-                    <a href="#" id="tomarFoto">Tomar Foto</a>
-                </li>
-            </ul>
         </div>
-        <div data-role="footer">
-            <div data-role="navbar">
-                <ul>
-                    <li id="validaRegistro"><a href="#" class="ui-btn-active">Registrar</a></li>                    
-                </ul>
-            </div><!-- /navbar -->
-        </div>
-    </div>
-    
-    <div data-role="page" id="politicas">
-        <div data-role="header"><a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all"></a><h1>Politicas</h1></div>
-        <div role="main" class="ui-content">
-        	<p>
-                Y prácticamente es la base de todo lo que se puede hacer, puedes hacer muchas estructuras desde lo mas básico hasta lo mas avanzado, puedes desde agregar un link hasta agregar un div con varios elementos dentro, todo con un simple atajo de 1 sola linea.
-            </p>
-        </div>
-    </div>
-	
-    <script src="cordova.js"></script>
-    <script src="js/jquery-1.12.2.min.js"></script>
-    <script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/actions.js"></script>
-    <script src="js/api/capture.js"></script>
-    <script src="js/api/fileTransfer.js"></script>
-    
-</body>
+        
+        <script src="phonegap.js"></script>
+        <script src="js/jquery-1.12.2.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/almacenamiento.js"></script>
+        <script src="js/servidor.js"></script>
+        <script src="js/historial.js"></script>
+        <script src="js/API/capture.js"></script>
+        <script src="js/API/fileTransfer.js"></script>
+    </body>
 </html>

@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "mx.phonegap.cenet.ventasAPP"
+        id          = "mx.cenet.hotelApp"
         versionCode = "1" 
         version     = "1.0.0" >
 
     <!-- versionCode is optional and Android only -->
 
-    <name>VentasAPP</name>
+    <name>HotelApp</name>
 
     <description>
-        Ejemplo de aplicacion con phonegap. 
+        Práctica de Reserva de hoteles 
     </description>
 
-    <author href="https://laitaliana.com.mx" email="moneoc@gmail.com">
-        Mr.  Verwest 
+    <author href="http://www.laitaliana.com.mx" email="moneoc@gmail.com">
+        Mr. Octavio Monroy
     </author>
-    
+
     <preference name="phonegap-version" value="3.7.0" />
     <preference name="orientation" value="portrait" />
-    
-    <gap:plugin name="org.apache.cordova.dialogs" />
+        
     <gap:plugin name="org.apache.cordova.media-capture" />
     <gap:plugin name="org.apache.cordova.file-transfer" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.network-information" />
     
-    <icon src="img/console.png" platform="android" />
+	<icon src="img/console.png" platform="android" />
     <access origin="*"/>
 </widget>
